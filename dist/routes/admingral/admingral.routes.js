@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const router = express_1.Router();
+const catalogo_controller_1 = require("../../controllers/admingral/catalogo.controller");
+const Validations_1 = require("../../libs/Validations");
+router.get('/getCatalogo', Validations_1.TokenValidation, catalogo_controller_1.getCatalogo);
+router.get('/getCatalogoDesc', Validations_1.TokenValidation, catalogo_controller_1.getCatalogoDesc);
+router.get('/getCatalogoArt', Validations_1.TokenValidation, catalogo_controller_1.getCatalogoArt);
+router.get('/getCatalogo/:id', Validations_1.TokenValidation, catalogo_controller_1.getCatalogoId);
+router.post('/addArticulo', Validations_1.TokenValidation, catalogo_controller_1.addArticulo);
+router.post('/updateArticulo/:id', Validations_1.TokenValidation, catalogo_controller_1.updateArticulo);
+router.post('/regCompra', Validations_1.TokenValidation, catalogo_controller_1.regCompra);
+exports.default = router;
